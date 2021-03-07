@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _67c1f05c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _984592d2 = () => interopDefault(import('../pages/_slug/index.vue' /* webpackChunkName: "pages/_slug/index" */))
 
 const emptyFn = () => {}
 
@@ -21,6 +22,10 @@ export const routerOptions = {
     path: "/",
     component: _67c1f05c,
     name: "index"
+  }, {
+    path: "/:slug",
+    component: _984592d2,
+    name: "slug"
   }],
 
   fallback: false
