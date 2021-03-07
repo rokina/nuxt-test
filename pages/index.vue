@@ -1,32 +1,26 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">nuxt-test</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <ul>
+    <li v-for="content in contents" :key="content.id">
+      <nuxt-link :to="`/${content.id}`">
+        {{ content.title }}
+      </nuxt-link>
+    </li>
+  </ul>
 </template>
 
 <script>
-export default {}
+import axios from 'axios'
+export default {
+  async asyncData() {
+    const { data } = await axios.get(
+      'https://headless-test.microcms.io/api/v1/news',
+      {
+        headers: { 'X-API-KEY': '824d2944-2a90-40b2-9097-78dfb1570015' }
+      }
+    )
+    return data
+  }
+}
 </script>
 
 <style>
