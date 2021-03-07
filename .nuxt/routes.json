@@ -3,14 +3,12 @@
     "name": "index",
     "path": "/",
     "component": "/Users/hiroki/Git/nuxt-test/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_67c1f05c"
+    "chunkName": "pages/index"
   },
   {
     "name": "slug",
     "path": "/:slug",
     "component": "/Users/hiroki/Git/nuxt-test/pages/_slug/index.vue",
-    "chunkName": "pages/_slug/index",
-    "_name": "_984592d2"
+    "chunkName": "pages/_slug/index"
   }
 ]
