@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/mqpo8_j8ois", (function(a){return {data:[{id:"mqpo8_j8ois",createdAt:a,updatedAt:a,publishedAt:a,revisedAt:a,title:"2021年のお知らせ",body:"\u003Cp\u003Eサンプルサンプル\u003C\u002Fp\u003E"}],fetch:{},mutations:void 0}}("2021-03-07T01:37:16.318Z")));
