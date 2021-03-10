@@ -1,11 +1,22 @@
 <template>
-  <ul>
-    <li v-for="content in contents" :key="content.id">
-      <nuxt-link :to="`/${content.id}`">
-        {{ content.title }}
-      </nuxt-link>
-    </li>
-  </ul>
+  <!-- https://bamp.media/ -->
+  <div>
+    <Header></Header>
+    <main>
+      <Slider></Slider>
+      <div>
+        <MainConts></MainConts>
+        <Sidebar></Sidebar>
+      </div>
+      <ul>
+        <li v-for="content in contents" :key="content.id">
+          <nuxt-link :to="`/${content.id}`">
+            {{ content.title }}
+          </nuxt-link>
+        </li>
+      </ul>
+    </main>
+  </div>
 </template>
 
 <script>
