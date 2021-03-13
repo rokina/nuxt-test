@@ -2,10 +2,10 @@
   <section class="c-pickup">
     <h2 class="c-pickup__title">PICKUP</h2>
     <div class="c-pickup__block">
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
+      <Card1></Card1>
+      <Card1></Card1>
+      <Card1></Card1>
+      <Card1></Card1>
     </div>
   </section>
 </template>

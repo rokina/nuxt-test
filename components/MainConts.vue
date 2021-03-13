@@ -1,3 +1,6 @@
 <template>
-  <div></div>
+  <div>
+    <Card2></Card2>
+    <Card2></Card2>
+  </div>
 </template>
