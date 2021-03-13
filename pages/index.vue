@@ -5,7 +5,7 @@
     <main>
       <Slider></Slider>
       <Pickup></Pickup>
-      <div>
+      <div class="c-container">
         <MainConts></MainConts>
         <Sidebar></Sidebar>
       </div>
@@ -34,3 +34,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.c-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
