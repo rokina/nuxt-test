@@ -4,6 +4,7 @@
     <Header></Header>
     <main>
       <Slider></Slider>
+      <Pickup></Pickup>
       <div>
         <MainConts></MainConts>
         <Sidebar></Sidebar>
