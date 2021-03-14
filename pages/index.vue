@@ -6,22 +6,18 @@
       <Slider></Slider>
       <Pickup></Pickup>
       <div class="c-container">
-        <MainConts></MainConts>
+        <MainConts :postsData="contents"></MainConts>
         <Sidebar></Sidebar>
       </div>
-      <ul>
-        <li v-for="content in contents" :key="content.id">
-          <nuxt-link :to="`/${content.id}`">
-            {{ content.title }}
-          </nuxt-link>
-        </li>
-      </ul>
     </main>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import MainConts from '/components/MainConts'
+
 export default {
   async asyncData({ $config }) {
     const { data } = await axios.get(
@@ -31,12 +27,17 @@ export default {
       }
     )
     return data
+  },
+  components: {
+    MainConts
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .c-container {
+  margin: 100px auto;
+  width: 1200px;
   display: flex;
   flex-wrap: wrap;
 }
