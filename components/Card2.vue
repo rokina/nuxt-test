@@ -18,7 +18,11 @@
           class="c-card__thumbnail"
         />
         <div class="c-card__content">
-          <span class="c-card__date">{{ content.publishedAt }}</span>
+          <time
+            class="c-card__date"
+            :datetime="$moment(content.publishedAt).format('YYYY-MM-DD')"
+            >{{ $moment(content.publishedAt).format('YYYY.MM.DD') }}</time
+          >
           <p class="c-card__title">
             {{ content.title }}
           </p>
