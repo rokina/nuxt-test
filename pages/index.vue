@@ -10,6 +10,7 @@
         <Sidebar></Sidebar>
       </div>
     </main>
+    <Footer></Footer>
   </div>
 </template>
 
