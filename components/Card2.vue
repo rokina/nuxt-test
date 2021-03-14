@@ -6,7 +6,14 @@
           content.category && content.category.name
         }}</span>
         <img
-          src="http://placehold.jp/400x250.png"
+          v-if="content.mainVisual"
+          :src="content.mainVisual.url"
+          alt=""
+          class="c-card__thumbnail"
+        />
+        <img
+          v-else
+          src="https://images.microcms-assets.io/assets/49f98e2075bc4b10af6d727b1efa9c2b/f841755072434234bf36da1cc8a90b77/42589447.jpg"
           alt=""
           class="c-card__thumbnail"
         />
@@ -55,6 +62,9 @@ export default {
   }
   &__thumbnail {
     display: block;
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
   }
   &__content {
     padding: 10px 15px 15px;

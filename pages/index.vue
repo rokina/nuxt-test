@@ -28,14 +28,14 @@ export default {
     return data
   },
   components: {
-    MainConts: MainConts //必要ない？
+    MainConts
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .c-container {
-  margin: 100px auto 0;
+  margin: 100px auto;
   width: 1200px;
   display: flex;
   flex-wrap: wrap;
