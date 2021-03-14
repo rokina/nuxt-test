@@ -1,26 +1,39 @@
 <template>
-  <article class="c-card">
-    <a href="#" class="c-card__item">
-      <span class="c-card__label">お知らせ</span>
-      <img
-        src="http://placehold.jp/400x250.png"
-        alt=""
-        class="c-card__thumbnail"
-      />
-      <div class="c-card__content">
-        <span class="c-card__date">2021.03.01</span>
-        <p class="c-card__title">
-          サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル
-        </p>
-      </div>
-    </a>
-  </article>
+  <div>
+    <article class="c-card" v-for="content in postsData" :key="content.id">
+      <nuxt-link :to="`/${content.id}`" class="c-card__item">
+        <span class="c-card__label">{{
+          content.category && content.category.name
+        }}</span>
+        <img
+          src="http://placehold.jp/400x250.png"
+          alt=""
+          class="c-card__thumbnail"
+        />
+        <div class="c-card__content">
+          <span class="c-card__date">{{ content.publishedAt }}</span>
+          <p class="c-card__title">
+            {{ content.title }}
+          </p>
+        </div>
+      </nuxt-link>
+    </article>
+  </div>
 </template>
+
+<script>
+export default {
+  props: ['postsData']
+}
+</script>
 
 <style lang="scss" scoped>
 .c-card {
   display: inline-block;
   width: 400px;
+  &:nth-child(n + 3) {
+    margin-top: 30px;
+  }
   &__item {
     display: inherit;
     text-decoration: none;
