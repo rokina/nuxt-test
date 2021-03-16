@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-conts div {
-  width: 830px;
+  width: 900px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

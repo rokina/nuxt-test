@@ -3,13 +3,13 @@
     <nav>
       <ul class="c-nav">
         <li class="c-nav__list">
-          <a href="#" class="c-nav__item">会社概要</a>
+          <nuxt-link to="/about/" class="c-nav__item">会社概要</nuxt-link>
         </li>
         <li class="c-nav__list">
-          <a href="#" class="c-nav__item">利用規約</a>
+          <nuxt-link to="/user-policy/" class="c-nav__item">利用規約</nuxt-link>
         </li>
         <li class="c-nav__list">
-          <a href="#" class="c-nav__item">プライバシーポリシー</a>
+          <nuxt-link to="/privacy-policy/" class="c-nav__item">プライバシーポリシー</nuxt-link>
         </li>
       </ul>
     </nav>

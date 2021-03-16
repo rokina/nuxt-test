@@ -41,7 +41,7 @@ export default {
 <style lang="scss" scoped>
 .c-card {
   display: inline-block;
-  width: 400px;
+  width: 440px;
   &:nth-child(n + 3) {
     margin-top: 30px;
   }
@@ -66,12 +66,12 @@ export default {
   }
   &__thumbnail {
     display: block;
-    width: 400px;
+    width: 440px;
     height: 250px;
     object-fit: cover;
   }
   &__content {
-    padding: 10px 15px 15px;
+    padding: 10px 0 15px;
     background: #fff;
   }
   &__date {
