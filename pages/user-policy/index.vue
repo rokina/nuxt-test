@@ -1,0 +1,9 @@
+<template>
+  <div>
+    <Header></Header>
+    <main>
+      <h2>利用規約</h2>
+    </main>
+    <Footer></Footer>
+  </div>
+</template>
