@@ -1,5 +1,5 @@
 <template>
-  <header class="c-header">
+  <header class="c-header" :class="{ 'is-fixed': scrollY > 1 }">
     <h1 class="c-header__logo"><a href="/"><img src="@/assets/img/logo.png" alt=""></a></h1>
     <nav class="c-header__nav">
       <ul class="c-header__lists">
@@ -11,13 +11,39 @@
   </header>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      scrollY: 0
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      this.scrollY = window.scrollY
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
   .c-header {
     padding: 40px 0;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    top: 0;
+    z-index: 1;
+    transition: .4s;
+    $root: &;
     &__logo {
       text-align: center;
       a {
         transition: opacity .3s;
+        display: inline-block;
         &:hover {
           opacity: 0.7;
         }
@@ -41,6 +67,22 @@
       transition: opacity .3s;
       &:hover {
         opacity: .7;
+      }
+    }
+    &.is-fixed {
+      display: flex;
+      padding: 20px 40px;
+      #{$root}__logo {
+        img {
+          width: 150px;
+        }
+      }
+      #{$root}__nav {
+        margin-top: 0;
+      }
+      #{$root}__lists {
+        align-items: center;
+        height: 100%;
       }
     }
   }

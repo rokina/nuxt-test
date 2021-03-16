@@ -71,7 +71,7 @@ export default {
     object-fit: cover;
   }
   &__content {
-    padding: 10px 15px 15px;
+    padding: 10px 0 15px;
     background: #fff;
   }
   &__date {
