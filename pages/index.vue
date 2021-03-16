@@ -6,7 +6,7 @@
       <Slider></Slider>
       <Pickup></Pickup>
       <div class="c-container">
-        <MainConts :postsData="contents"></MainConts>
+        <MainConts :postsData="posts"></MainConts>
         <Sidebar></Sidebar>
       </div>
     </main>
@@ -26,7 +26,14 @@ export default {
         headers: { 'X-API-KEY': $config.apiKey }
       }
     )
-    return data
+    const { data:data2 } = await axios.get(
+      'https://headless-test.microcms.io/api/v1/pickup/99ggpm7e16',
+      {
+        headers: { 'X-API-KEY': $config.apiKey }
+      }
+    )
+    // console.log(data2)
+    return { posts: data.contents, pickup: data2.pickup_post }
   },
   components: {
     MainConts
