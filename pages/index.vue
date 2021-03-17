@@ -4,7 +4,7 @@
     <Header></Header>
     <main>
       <Slider></Slider>
-      <Pickup></Pickup>
+      <Pickup :pickupData="pickup"></Pickup>
       <div class="c-container">
         <MainConts :postsData="posts"></MainConts>
         <Sidebar></Sidebar>
@@ -17,26 +17,28 @@
 <script>
 import axios from 'axios'
 import MainConts from '/components/MainConts'
+import Pickup from '/components/Pickup'
 
 export default {
   async asyncData({ $config }) {
-    const { data } = await axios.get(
+    const { data:posts } = await axios.get(
       'https://headless-test.microcms.io/api/v1/news',
       {
         headers: { 'X-API-KEY': $config.apiKey }
       }
     )
-    const { data:data2 } = await axios.get(
+    const { data:pickup } = await axios.get(
       'https://headless-test.microcms.io/api/v1/pickup/99ggpm7e16',
       {
         headers: { 'X-API-KEY': $config.apiKey }
       }
     )
-    // console.log(data2)
-    return { posts: data.contents, pickup: data2.pickup_post }
+    // console.log(pickup)
+    return { posts: posts.contents, pickup: pickup.pickup_post }
   },
   components: {
-    MainConts
+    MainConts,
+    Pickup
   }
 }
 </script>
