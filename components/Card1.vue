@@ -1,26 +1,50 @@
 <template>
-  <article class="c-card">
-    <a href="#" class="c-card__item">
-      <span class="c-card__label">お知らせ</span>
-      <img
-        src="http://placehold.jp/280x160.png"
-        alt=""
-        class="c-card__thumbnail"
-      />
-      <div class="c-card__content">
-        <span class="c-card__date">2021.03.01</span>
-        <p class="c-card__title">
-          サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル
-        </p>
-      </div>
-    </a>
-  </article>
+  <div>
+    <article class="c-card" v-for="content in pickupData" :key="content.id">
+      <nuxt-link :to="`/${content.id}`" class="c-card__item">
+        <span class="c-card__label">{{
+          content.category && content.category.name
+        }}</span>
+        <img
+          v-if="content.mainVisual"
+          :src="content.mainVisual.url"
+          alt=""
+          class="c-card__thumbnail"
+        />
+        <img
+          v-else
+          src="https://images.microcms-assets.io/assets/49f98e2075bc4b10af6d727b1efa9c2b/f841755072434234bf36da1cc8a90b77/42589447.jpg"
+          alt=""
+          class="c-card__thumbnail"
+        />
+        <div class="c-card__content">
+          <time
+            class="c-card__date"
+            :datetime="$moment(content.publishedAt).format('YYYY-MM-DD')"
+            >{{ $moment(content.publishedAt).format('YYYY.MM.DD') }}</time
+          >
+          <p class="c-card__title">
+            {{ content.title }}
+          </p>
+        </div>
+      </nuxt-link>
+    </article>
+  </div>
 </template>
+
+<script>
+export default {
+  props: ['pickupData']
+}
+</script>
 
 <style lang="scss" scoped>
 .c-card {
   display: inline-block;
   width: 280px;
+  & + & {
+    margin-left: 20px;
+  }
   &__item {
     display: inherit;
     text-decoration: none;
@@ -42,6 +66,9 @@
   }
   &__thumbnail {
     display: block;
+    width: 280px;
+    height: 160px;
+    object-fit: cover;
   }
   &__content {
     padding: 10px 15px 15px;

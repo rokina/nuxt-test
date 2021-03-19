@@ -60,5 +60,15 @@ export default {
 
   moment: {
     locales: ['ja']
+  },
+
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/page/:p',
+        component: resolve(__dirname, 'pages/archive.vue'),
+        name: 'page',
+      })
+    }
   }
 }

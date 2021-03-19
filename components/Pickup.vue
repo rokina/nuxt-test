@@ -2,13 +2,16 @@
   <section class="c-pickup">
     <h2 class="c-pickup__title">PICKUP</h2>
     <div class="c-pickup__block">
-      <Card1></Card1>
-      <Card1></Card1>
-      <Card1></Card1>
-      <Card1></Card1>
+      <Card1 :pickupData="pickupData"></Card1>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: ['pickupData']
+}
+</script>
 
 <style lang="scss" scoped>
 .c-pickup {
