@@ -3,7 +3,7 @@
     <article class="c-card" v-for="content in pickupData" :key="content.id">
       <nuxt-link :to="`/${content.id}`" class="c-card__item">
         <span class="c-card__label">{{
-          content.category && content.category.id
+          content.category && content.category.name
         }}</span>
         <img
           v-if="content.mainVisual"

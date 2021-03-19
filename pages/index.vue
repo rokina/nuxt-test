@@ -28,7 +28,7 @@ export default {
       }
     )
     const { data:pickup } = await axios.get(
-      'https://headless-test.microcms.io/api/v1/pickup/99ggpm7e16',
+      'https://headless-test.microcms.io/api/v1/pickup/99ggpm7e16?depth=2',
       {
         headers: { 'X-API-KEY': $config.apiKey }
       }
