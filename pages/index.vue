@@ -3,7 +3,7 @@
   <div>
     <Header></Header>
     <main>
-      <Slider></Slider>
+      <Slider :sliderData="slider"></Slider>
       <Pickup :pickupData="pickup"></Pickup>
       <div class="c-container">
         <MainConts :postsData="posts"></MainConts>
@@ -19,6 +19,7 @@
 import axios from 'axios'
 import MainConts from '/components/MainConts'
 import Pickup from '/components/Pickup'
+import Slider from '/components/Slider'
 
 export default {
   async asyncData({ params, $config }) {
@@ -38,11 +39,22 @@ export default {
         headers: { 'X-API-KEY': $config.apiKey }
       }
     )
-    return { posts: posts.contents, pickup: pickup.pickup_post }
+    const { data: slider } = await axios.get(
+      'https://headless-test.microcms.io/api/v1/slider/5z3nkburtu?depth=2',
+      {
+        headers: { 'X-API-KEY': $config.apiKey }
+      }
+    )
+    return {
+      posts: posts.contents,
+      pickup: pickup.pickup_post,
+      slider: slider.slider_post
+    }
   },
   components: {
     MainConts,
-    Pickup
+    Pickup,
+    Slider
   }
 }
 </script>
