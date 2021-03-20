@@ -24,14 +24,15 @@ export default {
   async asyncData({ params, $config }) {
     const page = params.p || '1'
     const limit = 8
-    console.log('params:', params);
-    const { data:posts } = await axios.get(
-      `https://headless-test.microcms.io/api/v1/news?limit=${limit}&offset=${(page - 1) * limit}`,
+    const { data: posts } = await axios.get(
+      `https://headless-test.microcms.io/api/v1/news?limit=${limit}&offset=${
+        (page - 1) * limit
+      }`,
       {
         headers: { 'X-API-KEY': $config.apiKey }
       }
     )
-    const { data:pickup } = await axios.get(
+    const { data: pickup } = await axios.get(
       'https://headless-test.microcms.io/api/v1/pickup/99ggpm7e16?depth=2',
       {
         headers: { 'X-API-KEY': $config.apiKey }
