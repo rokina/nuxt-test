@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-pickup {
-  padding: 200px 0 70px;
+  padding: 220px 0 70px;
   margin-top: -150px;
   background: #f1f1f1;
   &__title {
