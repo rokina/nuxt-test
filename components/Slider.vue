@@ -2,7 +2,7 @@
   <!-- <div class="c-slider">
     <img src="http://placehold.jp/1200x600.png" alt="" />
   </div> -->
-  <div>
+  <div class="c-slider">
     <swiper :options="swiperOption">
       <swiper-slide v-for="content in sliderData" :key="content.id">
         <nuxt-link :to="`/${content.id}`" class="c-slider__item">
@@ -45,10 +45,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-slider {
   width: 1200px;
   margin: auto;
+  position: relative;
   &__item {
     display: block;
     transition: opacity 0.3s;
@@ -82,29 +83,37 @@ export default {
     color: #ddd;
   }
 }
-.swiper-container {
-  border: 1px solid #ddd;
-  text-align: center;
-  width: 1200px;
-  height: 675px;
-  overflow: hidden;
-  background: #fff;
-}
-.swiper-slide {
-  position: relative;
-}
-.swiper-slide img {
-  width: 1200px;
-  height: 675px;
-  object-fit: cover;
-}
-.swiper-pagination {
-  left: 0;
-  right: 0;
-  bottom: 40px;
-  display: flex;
-  justify-content: space-between;
-  width: 50px;
-  margin: auto;
+</style>
+<style lang="scss" scoped>
+.swiper {
+  &-container {
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 1200px;
+    height: 675px;
+    overflow: hidden;
+    background: #fff;
+  }
+  &-slide {
+    position: relative;
+    img {
+      width: 1200px;
+      height: 675px;
+      object-fit: cover;
+    }
+  }
+  &-pagination {
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    margin: auto;
+    &-bullet {
+      width: 10px;
+      height: 10px;
+    }
+  }
 }
 </style>
