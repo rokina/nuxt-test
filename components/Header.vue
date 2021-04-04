@@ -6,13 +6,19 @@
     <nav class="c-header__nav">
       <ul class="c-header__lists">
         <li class="c-header__list">
-          <a href="#" class="c-header__item">新着記事</a>
+          <nuxt-link to="/categories/uw-3o99hi" class="c-header__item"
+            >休暇情報</nuxt-link
+          >
         </li>
         <li class="c-header__list">
-          <a href="#" class="c-header__item">お知らせ</a>
+          <nuxt-link to="/categories/280sbixzvibo" class="c-header__item"
+            >日常</nuxt-link
+          >
         </li>
         <li class="c-header__list">
-          <a href="#" class="c-header__item">ブログ</a>
+          <nuxt-link to="/categories/asjqwlyofn0k" class="c-header__item"
+            >エンタメ</nuxt-link
+          >
         </li>
       </ul>
     </nav>
