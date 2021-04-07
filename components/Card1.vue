@@ -43,7 +43,7 @@ export default {
   display: inline-block;
   width: 280px;
   & + & {
-    margin-left: 20px;
+    margin-left: 26px;
   }
   &__item {
     display: inherit;
