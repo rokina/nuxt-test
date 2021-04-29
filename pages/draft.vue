@@ -6,7 +6,10 @@
         <div class="c-conts">
           <p class="c-label">{{ data.category && data.category.name }}</p>
           <h1 class="c-title">{{ data.title }}</h1>
-          <p class="c-date">{{ $moment(data.publishedAt).format('YYYY.MM.DD') }}</p>
+          test
+          <p class="c-date">
+            {{ $moment(data.publishedAt).format('YYYY.MM.DD') }}
+          </p>
           <div class="c-post" v-html="data.body"></div>
         </div>
         <Sidebar></Sidebar>
@@ -23,12 +26,12 @@ export default {
   data() {
     return {
       data: {}
-    };
+    }
   },
   async created() {
-    const query = this.$route.query;
+    const query = this.$route.query
     if (query.id === undefined || query.draftKey === undefined) {
-      return;
+      return
     }
     const { data } = await axios.get(
       `https://headless-test.microcms.io/api/v1/news/${query.id}?draftKey=${query.draftKey}`,
@@ -36,8 +39,8 @@ export default {
         headers: { 'X-API-KEY': this.$config.apiKey }
       }
     )
-    this.data = data;
-  },
+    this.data = data
+  }
 }
 </script>
 
@@ -71,7 +74,7 @@ export default {
   margin-top: 80px;
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -50px;
     left: 0;
