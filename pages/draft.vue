@@ -36,6 +36,7 @@ export default {
     const { data } = await axios.get(
       `https://headless-test.microcms.io/api/v1/news/${query.id}?draftKey=${query.draftKey}`,
       {
+        // TODO: APIキー隠蔽できないか考える そもそも隠蔽の必要ある？
         headers: { 'X-API-KEY': '824d2944-2a90-40b2-9097-78dfb1570015' }
       }
     )
