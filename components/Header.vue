@@ -22,11 +22,14 @@
         </li>
       </ul>
     </nav>
+    <SearchForm></SearchForm>
   </header>
 </template>
 
 <script>
+import SearchForm from '/components/SearchForm'
 export default {
+  components: { SearchForm },
   data() {
     return {
       scrollY: 0
