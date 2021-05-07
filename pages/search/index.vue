@@ -3,15 +3,7 @@
     <Header></Header>
     <main>
       <div class="c-container">
-        <div class="c-conts">
-          <p class="c-label">{{ data.category && data.category.name }}</p>
-          <h1 class="c-title">{{ data.title }}</h1>
-          test
-          <p class="c-date">
-            {{ $moment(data.publishedAt).format('YYYY.MM.DD') }}
-          </p>
-          <div class="c-post" v-html="data.body"></div>
-        </div>
+        <MainConts :postsData="posts"></MainConts>
         <Sidebar></Sidebar>
       </div>
     </main>
@@ -25,22 +17,20 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      data: {}
+      posts: {}
     }
   },
   async created() {
-    const query = this.$route.query
-    if (query.id === undefined || query.draftKey === undefined) {
-      return
-    }
+    const keyword = this.$route.query.q
+
     const { data } = await axios.get(
-      `https://headless-test.microcms.io/api/v1/news/${query.id}?draftKey=${query.draftKey}`,
+      `https://headless-test.microcms.io/api/v1/news?q=${keyword}`,
       {
         // TODO: APIキー隠蔽できないか考える そもそも隠蔽の必要ある？
         headers: { 'X-API-KEY': '824d2944-2a90-40b2-9097-78dfb1570015' }
       }
     )
-    this.data = data
+    this.posts = data.contents
   }
 }
 </script>
