@@ -22,7 +22,9 @@
         </li>
       </ul>
     </nav>
-    <SearchForm></SearchForm>
+    <div class="c-header__search">
+      <SearchForm></SearchForm>
+    </div>
   </header>
 </template>
 
@@ -86,6 +88,11 @@ export default {
       opacity: 0.7;
     }
   }
+  &__search {
+    width: 1200px;
+    position: relative;
+    margin: auto;
+  }
   &.is-fixed {
     display: flex;
     padding: 20px 40px;
@@ -100,6 +107,11 @@ export default {
     #{$root}__lists {
       align-items: center;
       height: 100%;
+    }
+    #{$root}__search {
+      .c-form {
+        position: static;
+      }
     }
   }
 }
