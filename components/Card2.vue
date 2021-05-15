@@ -13,7 +13,7 @@
         />
         <img
           v-else
-          src="https://images.microcms-assets.io/assets/49f98e2075bc4b10af6d727b1efa9c2b/f841755072434234bf36da1cc8a90b77/42589447.jpg"
+          src="https://images.microcms-assets.io/assets/49f98e2075bc4b10af6d727b1efa9c2b/cca3e5b7438c4f2bbebb56fe2ccd6444/42589447.webp"
           alt=""
           class="c-card__thumbnail"
         />

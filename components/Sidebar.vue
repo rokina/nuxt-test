@@ -4,19 +4,31 @@
     <ul class="c-lists">
       <li class="c-list">
         <a href="" class="c-list__item">
-          <img src="http://placehold.jp/80x60.png" alt="" class="c-list__image">
+          <img
+            src="http://placehold.jp/80x60.png"
+            alt=""
+            class="c-list__image"
+          />
           <p class="c-list__title">サンプルサンプル</p>
         </a>
       </li>
       <li class="c-list">
         <a href="" class="c-list__item">
-          <img src="http://placehold.jp/80x60.png" alt="" class="c-list__image">
+          <img
+            src="http://placehold.jp/80x60.png"
+            alt=""
+            class="c-list__image"
+          />
           <p class="c-list__title">サンプルサンプル</p>
         </a>
       </li>
       <li class="c-list">
         <a href="" class="c-list__item">
-          <img src="http://placehold.jp/80x60.png" alt="" class="c-list__image">
+          <img
+            src="http://placehold.jp/80x60.png"
+            alt=""
+            class="c-list__image"
+          />
           <p class="c-list__title">サンプルサンプル</p>
         </a>
       </li>
@@ -43,7 +55,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ccc;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     &:hover {
       opacity: 0.7;
     }
