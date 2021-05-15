@@ -20,13 +20,15 @@ export default {
   async asyncData({ params, $config }) {
     const page = params.p || '1'
     const limit = 8
-    const { data:posts } = await axios.get(
-      `https://headless-test.microcms.io/api/v1/news?limit=${limit}&offset=${(page - 1) * limit}`,
+    const { data: posts } = await axios.get(
+      `https://headless-test.microcms.io/api/v1/news?limit=${limit}&offset=${
+        (page - 1) * limit
+      }`,
       {
         headers: { 'X-API-KEY': $config.apiKey }
       }
     )
-    return { posts: posts.contents}
+    return { posts: posts.contents }
   },
   components: {
     MainConts

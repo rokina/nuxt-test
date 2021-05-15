@@ -61,7 +61,7 @@ export default {
   margin-top: 80px;
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -50px;
     left: 0;

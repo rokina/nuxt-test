@@ -1,13 +1,18 @@
 <template>
   <form action="/search/" class="c-form">
-    <input class="c-form__input" placeholder="記事検索" type="text" name="q" size="10">
-    <input class="c-form__button" type="submit" value="検索" method="get">
+    <input
+      class="c-form__input"
+      placeholder="記事検索"
+      type="text"
+      name="q"
+      size="10"
+    />
+    <input class="c-form__button" type="submit" value="検索" method="get" />
   </form>
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
@@ -21,7 +26,7 @@ export default {
     border: 1px solid #ddd;
     padding: 3px 7px;
     border-radius: 4px 0 0 4px;
-    transition: .3s;
+    transition: 0.3s;
     &:focus {
       outline: none;
       border-color: #444;
@@ -33,7 +38,7 @@ export default {
     padding: 2px 7px;
     color: #fff;
     border-radius: 0 4px 4px 0;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     &:hover {
       opacity: 0.7;
     }

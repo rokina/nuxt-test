@@ -1,5 +1,4 @@
 <template>
-  <!-- https://bamp.media/ -->
   <div>
     <Header></Header>
     <main>

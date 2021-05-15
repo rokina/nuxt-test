@@ -9,7 +9,9 @@
           <nuxt-link to="/user-policy/" class="c-nav__item">利用規約</nuxt-link>
         </li>
         <li class="c-nav__list">
-          <nuxt-link to="/privacy-policy/" class="c-nav__item">プライバシーポリシー</nuxt-link>
+          <nuxt-link to="/privacy-policy/" class="c-nav__item"
+            >プライバシーポリシー</nuxt-link
+          >
         </li>
       </ul>
     </nav>
